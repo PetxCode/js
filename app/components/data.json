@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "question": [
+      "convert the given string to upper case let a = ''Peter Packer''."
+    ],
+    "ans": "a.toUpperCase();"
+  },
+  {
+    "id": 2,
+    "question": "Please enter 2",
+    "ans": "ans 2"
+  },
+  {
+    "id": 3,
+    "question": "Please enter 3",
+    "ans": "ans 3"
+  }
+]
