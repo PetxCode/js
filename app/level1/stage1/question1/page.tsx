@@ -10,21 +10,28 @@ const page = () => {
   let mainResult = data[value].ans;
   let mainQuestion = data[value].question;
 
-  const [count, setCount] = useState<number>(0);
+  const [count, setCount] = useState<number>(1);
 
-  //   useEffect(() => {
-  //     const time: NodeJS.Timer;
-  //     if (count > 0) {
-  //       let time = setInterval(() => {
-  //         setCount((el) => el + 1);
-  //         clearInterval(time);
-  //       }, 1000);
-  //     }
-  //   }, [count]);
+  useEffect(() => {
+    let timer: NodeJS.Timer | null = null;
+
+    if (count > 0) {
+      timer = setInterval(() => {
+        setCount((prevCount) => prevCount + 1);
+      }, 1000);
+    }
+
+    // Clean up the interval when count changes or component unmounts
+    return () => {
+      if (timer) {
+        clearInterval(timer);
+      }
+    };
+  }, [count]);
 
   return (
     <main>
-      {/* <div className="my-5 font-bold">{count}</div> */}
+      <div className="my-5 font-bold">{count % 10}</div>
       <Reused
         question={`Question #${value + 1}`}
         mainResult={mainResult}

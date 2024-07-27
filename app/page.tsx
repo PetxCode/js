@@ -30,6 +30,7 @@ const page = () => {
             Enter the right code
           </label>
           <textarea
+            placeholder="Start this code war"
             className="w-full p-2 h-[150px] resize-none border rounded-md"
             name="text"
             value={text}
@@ -48,7 +49,7 @@ const page = () => {
             dispatch(changeUser(text!));
           }}
         >
-          <Link href={"/level1/stage1/question1"}>Let Go!</Link>
+          <Link href={"/level1/stage1/question1"}>Let Go now!</Link>
         </Button>
       </form>
     </div>
